@@ -11,5 +11,9 @@ export class PostCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // To create a post
+  onAddPost() {
+    alert("Post created!");
+  }
 
 }
