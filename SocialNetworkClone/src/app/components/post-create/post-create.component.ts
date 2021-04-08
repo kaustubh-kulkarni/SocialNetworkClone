@@ -1,7 +1,7 @@
-import { invalid } from '@angular/compiler/src/render3/view/util';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Post } from '../_interfaces/post.model';
+import { PostsService } from '../_services/posts.service';
 
 
 @Component({
@@ -13,10 +13,9 @@ export class PostCreateComponent implements OnInit {
   // Props
   enteredContent = '';
   enteredTitle = '';
-  // Turns into event which can be used outside
-  @Output() postCreated = new EventEmitter<Post>();
+ 
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +28,7 @@ export class PostCreateComponent implements OnInit {
       title: form.value.title,
       content: form.value.content
     };
-    this.postCreated.emit(post);
+    this.postsService.addPost(form.value.title, form.value.content)
   }
 
 }
