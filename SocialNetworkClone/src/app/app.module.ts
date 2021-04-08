@@ -1,11 +1,15 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Components
 import { AppComponent } from './app.component';
+import { PostCreateComponent } from './components/post-create/post-create.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule
