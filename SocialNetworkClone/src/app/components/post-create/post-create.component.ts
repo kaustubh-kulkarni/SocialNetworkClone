@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
+  // Props
+  newPost = 'NO CONTENT';
 
   constructor() { }
 
@@ -13,7 +15,7 @@ export class PostCreateComponent implements OnInit {
   }
   // To create a post
   onAddPost() {
-    alert("Post created!");
+    this.newPost = "Hello. This is user post";
   }
 
 }
