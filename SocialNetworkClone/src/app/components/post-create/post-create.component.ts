@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCreateComponent implements OnInit {
   // Props
+  enteredValue = '';
   newPost = 'NO CONTENT';
 
   constructor() { }
@@ -15,7 +16,7 @@ export class PostCreateComponent implements OnInit {
   }
   // To create a post
   onAddPost() {
-    this.newPost = "Hello. This is user post";
+    this.newPost = this.enteredValue;
   }
 
 }

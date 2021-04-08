@@ -1,5 +1,6 @@
 <!-- Property binding [value] -->
-<textarea rows="6" [value]="'Test'"></textarea>
+<!-- Two way binding -->
+<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
 <hr>
 <button (click)="onAddPost()">Save Post</button>
 <!-- String interpolation -->

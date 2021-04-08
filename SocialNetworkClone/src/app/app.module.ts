@@ -1,5 +1,6 @@
 // Modules
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Components
@@ -12,7 +13,8 @@ import { PostCreateComponent } from './components/post-create/post-create.compon
     PostCreateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
