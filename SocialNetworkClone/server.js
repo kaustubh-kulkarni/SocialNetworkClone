@@ -1,9 +1,11 @@
 const http = require('http');
+const app = require('./Backend/app');
+const port = process.env.PORT || 3000;
+
+app.set('port', port);
 
 // Create server
-const server = http.createServer((req, res) => {
-    res.end('This is my first res');
-});
+const server = http.createServer(app);
 
 // Listen to the server var
-server.listen(process.env.PORT || 3000);
+server.listen(port);
