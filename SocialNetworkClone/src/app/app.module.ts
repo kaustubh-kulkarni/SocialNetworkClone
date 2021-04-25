@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {HttpClientModule} from '@angular/common/http'
 
 // Components
 import { AppComponent } from './app.component';
@@ -30,7 +31,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
     MatToolbarModule,
     MatExpansionModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
