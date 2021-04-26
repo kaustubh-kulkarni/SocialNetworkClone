@@ -13,6 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// POST endpoint
 app.post("/api/posts", (req, res, next) => {
     const post = req.body;
     console.log(post);
