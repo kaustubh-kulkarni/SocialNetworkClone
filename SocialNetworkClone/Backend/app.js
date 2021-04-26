@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+// Importing post model
+const PostModel = require('./models/post');
 
 
 // Body parser setup
@@ -15,14 +17,17 @@ app.use((req, res, next) => {
 
 // POST endpoint
 app.post("/api/posts", (req, res, next) => {
-    const post = req.body;
+    const post = new PostModel({
+        title: req.body.title,
+        content: req.body.content
+    });
     console.log(post);
     res.status(201).json({
         message: 'Post added successfully!'
     });
 });
 
-// Get posts endpoint
+// GET posts endpoint
 app.use('/api/posts', (req, res, next) => {
     const posts = [
         { id: '1', title: 'First server side post', content: 'Coming from server' },
