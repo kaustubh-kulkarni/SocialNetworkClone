@@ -36,7 +36,7 @@ app.post("/api/posts", (req, res, next) => {
 });
 
 // GET posts endpoint
-app.use('/api/posts', (req, res, next) => {
+app.get('/api/posts', (req, res, next) => {
     Post.find()
         .then(documents => {
             res.status(200).json({
@@ -44,6 +44,14 @@ app.use('/api/posts', (req, res, next) => {
                 posts: documents
             });
         });
+});
+
+// DELETE post endpoint
+app.delete("/api/posts/:id", (req, res, next) => {
+    Post.deleteOne({ _id: req.params.id }).then(result => {
+        console.log(result);
+        res.status(200).json({ message: "Post deleted!" });
+    });
 });
 
 
