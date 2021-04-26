@@ -1,8 +1,16 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 // Importing post model
 const PostModel = require('./models/post');
 
+// Connection to DB
+mongoose.connect('mongodb://localhost:27017/mySocialNetwork', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+        console.log('Connected to database successfully');
+    })
+    .catch(() => {
+        console.log('Connection failed');
+    });
 
 // Body parser setup
 app.use(express.json());
