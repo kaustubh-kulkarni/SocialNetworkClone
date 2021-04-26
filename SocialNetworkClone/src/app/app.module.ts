@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // Components
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
     MatExpansionModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
