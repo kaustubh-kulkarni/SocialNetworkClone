@@ -36,11 +36,13 @@ export class PostsService {
         return this.http.get<{_id: string, title: string, content: string}>(this.baseUrl + '/posts/' + id);
     }
 
-    addPost(title: string, content: string) {
-        const post: Post = {id:null, title: title, content: content};
-        this.http.post<{message: string, postId: string}>(this.baseUrl + '/posts', post).subscribe((res) => {
-            const id = res.postId;
-            post.id = id;
+    addPost(title: string, content: string, image: File) {
+        const postData = new FormData();
+        postData.append("title", title);
+        postData.append("content", content);
+        postData.append("image", image, title);
+        this.http.post<{message: string, postId: string}>(this.baseUrl + '/posts', postData).subscribe((res) => {
+            const post: Post = {id: res.postId, title: title, content: content}
             this.posts.push(post);
             this.postsUpdated.next([...this.posts]);
             this.router.navigateByUrl("/");
